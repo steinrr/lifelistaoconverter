@@ -13,7 +13,7 @@ file_path = filedialog.askopenfilename()
 aooutput = ''
 i = 0
 
-with open(file_path, newline='') as csvfile:
+with open(file_path, newline='', encoding='utf-8') as csvfile:
     lifelistreader = csv.reader(csvfile, delimiter=',', quotechar='"')
     for row in lifelistreader:
         if i == 0:

@@ -1,8 +1,9 @@
 import csv
 import sys
-import subprocess
 import tkinter as tk
 from tkinter import filedialog, messagebox
+import platform
+import pyperclip as pc
 
 root = tk.Tk()
 root.withdraw()
@@ -35,7 +36,8 @@ with open(file_path, newline='') as csvfile:
         i +=1
         
 
-subprocess.run("pbcopy", text=True, input=aooutput)
+pc.copy(aooutput)
+
 messagebox.showinfo("showinfo", 'Converted ' + str(i) + ' records.\nResult copied to clipboard.')
 
 

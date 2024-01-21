@@ -24,7 +24,10 @@ with open(file_path, newline='', encoding='utf-8') as csvfile:
             # Lokalitetsnavn
             aooutput += '\t' + row[4]
             # Fra dato
-            aooutput += '\t' + row[2][8:10] + '.' + row[2][5:7] + '.' + row[2][0:4]
+            if row[2] == "":
+                aooutput += '\t'    
+            else:
+                aooutput += '\t' + row[2][8:10] + '.' + row[2][5:7] + '.' + row[2][0:4]
             # Fra klokkeslett
             aooutput += '\t' + row[3][0:5]
             # Antall
@@ -38,6 +41,6 @@ with open(file_path, newline='', encoding='utf-8') as csvfile:
 
 pc.copy(aooutput)
 
-messagebox.showinfo("showinfo", 'Converted ' + str(i) + ' records.\nResult copied to clipboard.')
+messagebox.showinfo("showinfo", 'Converted ' + str(i-1) + ' records.\nResult copied to clipboard.')
 
 

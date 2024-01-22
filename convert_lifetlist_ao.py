@@ -17,7 +17,7 @@ with open(file_path, newline='', encoding='utf-8') as csvfile:
     lifelistreader = csv.reader(csvfile, delimiter=',', quotechar='"')
     for row in lifelistreader:
         if i == 0:
-            aooutput = 'Artsnavn	Lokalitetsnavn	Fra dato	Fra klokkeslett	Antall	Kjønn'
+            aooutput = 'Artsnavn	Lokalitetsnavn	Fra dato	Fra klokkeslett	Antall	Kjønn	Aktivitet	Kommentar (synlig for alle)'
         else:
             # Artsnavn
             aooutput += row[0]
@@ -32,13 +32,26 @@ with open(file_path, newline='', encoding='utf-8') as csvfile:
             aooutput += '\t' + row[3][0:5]
             # Antall
             aooutput += '\t' + row[7]
-            # Kjønn
-            aooutput += '\t' + row[8]
             
+            # Notes
+            notes = row[8].split("/")
+            
+            if len(notes) > 0:
+                # Kjønn
+                aooutput += '\t' + notes[0]
+
+            if len(notes) > 1:
+                # Aktivitet
+                aooutput += '\t' + notes[1]
+
+            if len(notes) > 2:
+                # Kommentar (synlig for alle)
+                aooutput += '\t' + notes[2]
+
+
         aooutput += '\n'
         i +=1
         
-
 pc.copy(aooutput)
 
 messagebox.showinfo("showinfo", 'Converted ' + str(i-1) + ' records.\nResult copied to clipboard.')

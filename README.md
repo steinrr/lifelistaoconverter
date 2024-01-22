@@ -19,11 +19,11 @@ Et Python-script for å konvertere data fra Life List-app til Artsobservasjoner-
 ## Viktig
 
 Life List-app'en støtter ikke å legge til kjønn, aktivitet eller kommentarer.
-Men hvis en i "Notes"-feltet under observasjon skriver på formen:
-kjønn/aktivitet/kommentar
+Men hvis en i "Notes"-feltet under observasjon skriver på formen:<br/> 
+`kjønn/aktivitet/kommentar`<br/> 
 
-så vil programmet konvertere dette til riktige AO-felter. For eksempel:
-Hunn/Ved fôring/Estimat
+så vil programmet konvertere dette til riktige AO-felter. For eksempel:<br/> 
+`Hunn/Ved fôring/Estimat`<br/> 
 
-En kan også bare oppgi noen av feltene:
-Hunn//Estimat
+En kan også bare oppgi noen av feltene:<br/> 
+`Hunn//Estimat`<br/> 

@@ -1,4 +1,4 @@
-# Convert Life List to Artsobservasjoner
+# Konvertere Life List til Artsobservasjoner
 
 Et Python-script for å konvertere data fra Life List-app til Artsobservasjoner-format.
 
